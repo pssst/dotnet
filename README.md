@@ -1,5 +1,5 @@
-Pssst for Windows
-=================
+Windows
+=======
 This is the official Pssst Windows client.
 
 Pssst is a simple and secure way to exchange information. We do not provide
