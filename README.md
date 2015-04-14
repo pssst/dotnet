@@ -22,11 +22,11 @@ Contact
 
 * If you want to be informed about code updates, bug fixes and
   security fixes of Pssst, please visit our project on GitHub:
-  https://github.com/pssst/android/
+  https://github.com/pssst/windows/
 
 * If you have a concrete bug report for Pssst please go to the
   Pssst issue tracker on GitHub and submit your report:
-  https://github.com/pssst/android/issues
+  https://github.com/pssst/windows/issues
 
 License
 -------
