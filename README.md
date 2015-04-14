@@ -1,6 +1,6 @@
 Pssst for Windows
 =================
-This is the basic client for devices running Windows.
+This is the official Pssst Windows client.
 
 Pssst is a simple and secure way to exchange information. We do not provide
 services by our self, but we provide you with the tools to start your own
