@@ -1,4 +1,4 @@
-Pssst .NET
+Pssst .NET [![](https://travis-ci.org/pssst/dotnet.svg)](https://travis-ci.org/pssst/dotnet)
 ==========
 This is the official Pssst client for everything that runs `.NET`.
 
