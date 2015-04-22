@@ -1,0 +1,12 @@
+language: csharp
+branches:
+  only:
+    - master
+
+solution: ./pssst.sln
+install:
+  - nuget restore ./pssst.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release ./pssst.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./pssst.Api.Pcl.Tests.Unit/bin/Release/pssst.Api.Pcl.Tests.Unit.dll
