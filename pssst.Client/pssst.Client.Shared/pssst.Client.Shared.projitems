@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>404b5e29-bbf3-4342-b37c-2634b1482058</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>pssst.Client</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)BusinessLogic\NavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BusinessLogic\PssstSettingsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BusinessLogic\PssstClientService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataAccess\UserRepositorySQLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interface\IConversationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interface\ICommunicationOverviewViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interface\INavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interface\INewMessagePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interface\IPssstClientService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interface\IPssstSettingsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interface\ISettingsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interface\IUserRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Conversation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Message.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CommunicationOverviewPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DesignTime\ConversationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DesignTime\CommunicationOverviewViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DesignTime\NewMessagePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DesignTime\SettingsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NewMessagePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SettingsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PageBase.cs" />
+  </ItemGroup>
+</Project>

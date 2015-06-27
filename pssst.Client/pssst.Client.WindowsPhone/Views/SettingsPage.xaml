@@ -1,0 +1,57 @@
+﻿<view:PageBase x:Class="pssst.Client.Views.SettingsPage"
+               xmlns:view="using:pssst.Client.Views"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:local="using:pssst.Client.Views"
+               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               xmlns:designtime="using:pssst.Client.ViewModels.DesignTime"
+               xmlns:prism="using:Microsoft.Practices.Prism.Mvvm"
+               mc:Ignorable="d"
+               Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+               prism:ViewModelLocator.AutoWireViewModel="True"
+               Margin="0,30,0,0">
+    <d:Page.DataContext>
+        <designtime:SettingsPageViewModel />
+    </d:Page.DataContext>
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition />
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0"
+                    Margin="19,0,0,0">
+            <TextBlock Text="xPssst Messenger"
+                       Style="{ThemeResource TitleTextBlockStyle}"
+                       Margin="0,12,0,0" />
+            <TextBlock Text="xSettings"
+                       Margin="0,-6.5,0,26.5"
+                       Style="{ThemeResource HeaderTextBlockStyle}"
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" />
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <StackPanel Grid.Row="1"
+                    x:Name="ContentRoot"
+                    Margin="19,9.5,19,0">
+            <TextBox Text="{Binding ServerUri, Mode=TwoWay}" />
+            <ComboBox ItemsSource="{Binding Users}"
+                      SelectedItem="{Binding SelectedUser, Mode=TwoWay}" />
+            <Button Content="xSet User"
+                    Command="{Binding SetUserCommand}" />
+            <TextBox Text="{Binding UserName, Mode=TwoWay}" />
+            <Button Content="xCreate User"
+                    Command="{Binding CreateUserCommand}" />
+        </StackPanel>
+    </Grid>
+</view:PageBase>

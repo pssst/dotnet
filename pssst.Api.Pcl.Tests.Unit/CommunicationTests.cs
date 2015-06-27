@@ -256,6 +256,8 @@ namespace pssst.Api.Pcl.Tests.Unit
 
         #endregion GetPublicKey Tests
 
+        #region ReceiveMessage Tests
+
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void ReceiveMessage_CallWithoutUserSpecified_ThrowsArgumentNullException()
@@ -345,6 +347,31 @@ namespace pssst.Api.Pcl.Tests.Unit
             // Assert
             Assert.AreEqual(encryptedMessage, messageBody.Value);
         }
+
+        [Test]
+        public void ReceiveMessage_ServerHasNoMessageForUser_ReturnsNull()
+        {
+            // Arrange
+            Uri server = new Uri("http://api.pssst.name");
+            User user = new User("Sender", string.Empty, string.Empty, string.Empty, string.Empty);
+
+            var crypto = MockRepository.GenerateStub<ICryptography>();
+            crypto.Stub(x => x.SignData(null, new Keypair(), 0))
+                .IgnoreArguments()
+                .Return(new byte[7]);
+
+            HttpMessageHandler fakeHttpMessageHandler = FakeHttpMessageHandler.GetHttpMessageHandler(string.Empty, HttpStatusCode.NoContent);
+
+            ICommunication communication = new HttpCommunication(new HttpClient(fakeHttpMessageHandler), crypto);
+
+            // Act
+            ReceivedMessageBody? messageBody = communication.ReceiveMessage(server, user);
+
+            // Assert
+            Assert.IsFalse(messageBody.HasValue);
+        }
+
+        #endregion ReceiveMessage Tests
     }
 
     

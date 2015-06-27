@@ -116,6 +116,9 @@ namespace pssst.Api.Pcl
 
             HttpResponseMessage response = _http.SendAsync(httpMessage).Result;
 
+            if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                return null;
+
             string responseString = response.Content.ReadAsStringAsync().Result;
 
             ReceivedMessageBody result = JsonConvert.DeserializeObject<ReceivedMessageBody>(responseString);
@@ -177,9 +180,10 @@ namespace pssst.Api.Pcl
             if (!string.IsNullOrEmpty(content))
             {
                 message.Content = new StringContent(content);
-                message.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                message.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");                
             }
 
+            message.Headers.IfModifiedSince = DateTime.UtcNow;
             message.Headers.Add("content-hash", contentHash);
 
             return message;

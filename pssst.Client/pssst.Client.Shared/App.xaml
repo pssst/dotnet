@@ -1,0 +1,6 @@
+﻿<prism:MvvmAppBase x:Class="pssst.Client.App"
+                   xmlns:prism="using:Microsoft.Practices.Prism.Mvvm"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:local="using:pssst.Client">
+</prism:MvvmAppBase>
