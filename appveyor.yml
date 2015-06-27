@@ -11,10 +11,7 @@ version: 1.0.{build}
 
 # scripts that run after cloning repository
 install:
-- ps: $vsixPath_sqlitewp81 = "$($env:USERPROFILE)\sqlite-wp81-winrt-3081002.vsix"
-- ps: (New-Object Net.WebClient).DownloadFile('https://visualstudiogallery.msdn.microsoft.com/5d97faf6-39e3-4048-a0bc-adde2af75d1b/file/132406/15/sqlite-wp81-winrt-3081002.vsix', $vsixPath_sqlitewp81)
-- ps: '"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\VSIXInstaller.exe" /q /a $vsixPath_sqlitewp81' | out-file ".\install-vsix.cmd" -Encoding ASCII 
-- ps: & .\install-vsix.cmd
+- ps: "$vsixPath_sqlitewp81 = \"$($env:USERPROFILE)\\sqlite-wp81-winrt-3081002.vsix\"\n(New-Object Net.WebClient).DownloadFile('https://visualstudiogallery.msdn.microsoft.com/5d97faf6-39e3-4048-a0bc-adde2af75d1b/file/132406/15/sqlite-wp81-winrt-3081002.vsix', $vsixPath_sqlitewp81)\n\"`\"C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\Common7\\IDE\\VSIXInstaller.exe`\" /q /a $vsixPath_sqlitewp81\" | out-file \".\\install-vsix.cmd\" -Encoding ASCII \n& .\\install-vsix.cmd\n\n$vsixPath_sqlitewrt81 = \"$($env:USERPROFILE)\\sqlite-wp81-winrt-3081002.vsix\"\n(New-Object Net.WebClient).DownloadFile('https://visualstudiogallery.msdn.microsoft.com/1d04f82f-2fe9-4727-a2f9-a2db127ddc9a/file/111148/22/sqlite-winrt81-3081002.vsix', $vsixPath_sqlitewrt81)\n\"`\"C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\Common7\\IDE\\VSIXInstaller.exe`\" /q /a $vsixPath_sqlitewrt81\" | out-file \".\\install-vsix.cmd\" -Encoding ASCII \n& .\\install-vsix.cmd"
 
 #---------------------------------#
 #       build configuration       #
