@@ -17,6 +17,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pssst.Client.Windows", "pss
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pssst.Client.WindowsPhone", "pssst.Client\pssst.Client.WindowsPhone\pssst.Client.WindowsPhone.csproj", "{0C48C32E-6B3E-48C4-80EA-2281B22CDA19}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F9B65C36-1DB2-473F-9DB8-D0A304B4EC49}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		pssst.Client\pssst.Client.Shared\pssst.Client.Shared.projitems*{404b5e29-bbf3-4342-b37c-2634b1482058}*SharedItemsImports = 13
