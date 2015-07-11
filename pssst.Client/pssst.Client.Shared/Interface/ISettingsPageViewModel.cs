@@ -48,10 +48,5 @@ namespace pssst.Client.Interface
         /// Creates a new user.
         /// </summary>
         ICommand CreateUserCommand { get; }
-
-        /// <summary>
-        /// Sets the current user.
-        /// </summary>
-        ICommand SetUserCommand { get; }
     }
 }

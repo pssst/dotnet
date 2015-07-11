@@ -109,8 +109,7 @@ namespace pssst.Client.ViewModels
             set
             {
                 this.settings.SelectedUser = value;
-                //SetProperty(ref this.selectedUser, value);
-                ((DelegateCommand)this.SetUserCommand).RaiseCanExecuteChanged();
+                this.SetUser();
             }
         }
 
@@ -144,27 +143,9 @@ namespace pssst.Client.ViewModels
             return !string.IsNullOrEmpty(this.UserName);
         }
 
-        private ICommand setUserCommand;
-
-        /// <summary>
-        /// Sets the current user.
-        /// </summary>
-        public ICommand SetUserCommand
+        private void SetUser()
         {
-            get
-            {
-                if (this.setUserCommand == null)
-                {
-                    this.setUserCommand = DelegateCommand.FromAsyncHandler(this.ExecuteSetUserCommand, this.CanExecuteSetUserCommand);
-                }
-
-                return this.setUserCommand;
-            }
-        }
-
-        private async Task ExecuteSetUserCommand()
-        {
-            await this.pssstService.SetUser(this.SelectedUser);
+            this.pssstService.SetUser(this.SelectedUser);
         }
 
         private bool CanExecuteSetUserCommand()

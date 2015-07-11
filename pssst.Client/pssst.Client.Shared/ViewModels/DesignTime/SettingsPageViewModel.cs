@@ -27,7 +27,5 @@ namespace pssst.Client.ViewModels.DesignTime
 
 
         public string SelectedUser { get; set; }
-
-        public ICommand SetUserCommand { get; set; }
     }
 }

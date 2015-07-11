@@ -47,8 +47,6 @@
             <TextBox Text="{Binding ServerUri, Mode=TwoWay}" />
             <ComboBox ItemsSource="{Binding Users}"
                       SelectedItem="{Binding SelectedUser, Mode=TwoWay}" />
-            <Button Content="Set User"
-                    Command="{Binding SetUserCommand}" />
             <TextBox Text="{Binding UserName, Mode=TwoWay}" />
             <Button Content="Create User"
                     Command="{Binding CreateUserCommand}" />
