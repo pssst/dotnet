@@ -102,7 +102,8 @@ namespace pssst.Client.BusinessLogic
                 messages.Add(new Message()
                     {
                         Sender = receivedMessage.Value.head.user,
-                        Text = receivedMessage.Value.body
+                        Text = receivedMessage.Value.body,
+                        Sent = this.ConvertSentDateTime(receivedMessage.Value.head.time)
                     });
             }
 
@@ -113,6 +114,16 @@ namespace pssst.Client.BusinessLogic
         public Task<IEnumerable<Model.User>> GetUsers()
         {
             return this.userRepository.LoadUsers();
+        }
+
+        private DateTime ConvertSentDateTime(long time)
+        {
+            DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            TimeSpan totalSeconds = TimeSpan.FromSeconds(time);
+            DateTime date = epoch + totalSeconds;
+
+            return date;
         }
     }
 }
