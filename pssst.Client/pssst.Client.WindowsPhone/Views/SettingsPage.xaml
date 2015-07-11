@@ -31,10 +31,10 @@
         <!-- Title Panel -->
         <StackPanel Grid.Row="0"
                     Margin="19,0,0,0">
-            <TextBlock Text="xPssst Messenger"
+            <TextBlock Text="Pssst Messenger"
                        Style="{ThemeResource TitleTextBlockStyle}"
                        Margin="0,12,0,0" />
-            <TextBlock Text="xSettings"
+            <TextBlock Text="Settings"
                        Margin="0,-6.5,0,26.5"
                        Style="{ThemeResource HeaderTextBlockStyle}"
                        CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" />
@@ -47,10 +47,10 @@
             <TextBox Text="{Binding ServerUri, Mode=TwoWay}" />
             <ComboBox ItemsSource="{Binding Users}"
                       SelectedItem="{Binding SelectedUser, Mode=TwoWay}" />
-            <Button Content="xSet User"
+            <Button Content="Set User"
                     Command="{Binding SetUserCommand}" />
             <TextBox Text="{Binding UserName, Mode=TwoWay}" />
-            <Button Content="xCreate User"
+            <Button Content="Create User"
                     Command="{Binding CreateUserCommand}" />
         </StackPanel>
     </Grid>

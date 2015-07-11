@@ -18,13 +18,13 @@
         <CommandBar>
             <AppBarButton Command="{Binding OpenNewMessageCommand}"
                           Icon="Add"
-                          Label="xNew Message" />
+                          Label="New Message" />
             <AppBarButton Command="{Binding RefreshCommand}"
                           Icon="Refresh"
-                          Label="xRefresh" />
+                          Label="Refresh" />
             <AppBarButton Command="{Binding OpenSettingsCommand}"
                           Icon="Setting"
-                          Label="xSettings" />
+                          Label="Settings" />
         </CommandBar>
     </view:PageBase.BottomAppBar>
 
