@@ -30,9 +30,11 @@
 
     <view:PageBase.Resources>
         <DataTemplate x:Key="MessageTemplate">
-            <Border BorderBrush="Yellow"
-                    BorderThickness="2"
-                    CornerRadius="5">
+            <Border BorderBrush="White"
+                    BorderThickness="1"
+                    CornerRadius="2"
+                    Margin="2"
+                    Padding="2">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -42,24 +44,29 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0"
-                               Text="{Binding Sender}" />
+                    <StackPanel Grid.Row="0"
+                                Orientation="Horizontal">
+                        <TextBlock Grid.Row="0"
+                                   Text="{Binding Sender}"
+                                   Foreground="Gray"
+                                   Margin="0,0,10,0"/>
+                        <TextBlock Grid.Row="2"
+                                   Foreground="Gray"
+                                   Text="{Binding Sent}" />
+                    </StackPanel>
+                    
                     <TextBlock Grid.Row="1"
                                Text="{Binding Text}" />
-                    <TextBlock Grid.Row="2"
-                               Text="{Binding Sent}" />
+                    
                 </Grid>
             </Border>
         </DataTemplate>
     </view:PageBase.Resources>
     <Grid Background="Transparent">
-        <Pivot Title="xPssst Messenger">
-            <PivotItem Header="xMessages">
+        <Pivot Title="Pssst Messenger">
+            <PivotItem Header="Messages">
                 <ItemsControl ItemsSource="{Binding Messages}"
                               ItemTemplate="{StaticResource MessageTemplate}" />
-            </PivotItem>
-            <PivotItem Header="xContacts">
-
             </PivotItem>
         </Pivot>
     </Grid>
