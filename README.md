@@ -2,6 +2,8 @@
 
 Pssst .NET [![Build status](https://ci.appveyor.com/api/projects/status/92iu4ln0jq6yf31a?svg=true)](https://ci.appveyor.com/project/7-bit/dotnet)
 ==========
+> PLEASE NOTE, THAT THIS PROJECT IS NO LONGER ACTIVELY MAINTAINED
+
 Pssst is a simple and secure way to exchange information. We do not provide
 services by our self, but we provide you with the tools to start your own
 service. These tools build upon open-source software and use strong end-to-end
